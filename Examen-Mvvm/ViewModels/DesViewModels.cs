@@ -39,6 +39,8 @@ namespace Examen_Mvvm.ViewModels
         {
             if (subtotal >= 10000)
                 return subtotal * 0.30;
+            else
+                return 0; // Devuelve 0 si el subtotal es menor a 10000
         }
 
         [RelayCommand]
