@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels ="clr-namespace:Examen_Mvvm.ViewModels"
+             x:Class="Examen_Mvvm.Views.Des"
+             Title="Despensa">
+    <VerticalStackLayout Padding="20">
+ 
+            <Label Grid.Row="0" Grid.Column="0" Text="Producto 1" FontSize="16" FontAttributes="Bold" />
+            <Entry Grid.Row="0" Grid.Column="1" Placeholder="Ingrese el precio del primer producto" Text="{Binding Producto1.Precio, Mode=TwoWay}" Keyboard="Numeric" />
+            <Label Grid.Row="1" Grid.Column="0" Text="Producto 2" FontSize="16" FontAttributes="Bold" />
+            <Entry Grid.Row="1" Grid.Column="1" Placeholder="Ingrese el precio del segundo producto" Text="{Binding Producto2.Precio, Mode=TwoWay}" Keyboard="Numeric" />
+            <Label Grid.Row="2" Grid.Column="0" Text="Producto 3" FontSize="16" FontAttributes="Bold" />
+            <Entry Grid.Row="2" Grid.Column="1" Placeholder="Ingrese el precio del tercer producto" Text="{Binding Producto3.Precio, Mode=TwoWay}" Keyboard="Numeric" />
+
+
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Label Text="Subtotal:" FontSize="16" FontAttributes="Bold" />
+            <Label Text="{Binding Subtotal, StringFormat='L{0:N2}'}" FontSize="16" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Label Text="Descuento:" FontSize="16" FontAttributes="Bold" />
+            <Label Text="{Binding Descuento, StringFormat='L{0:N2}'}" FontSize="16" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Label Text="Total a Pagar:" FontSize="16" FontAttributes="Bold" />
+            <Label Text="{Binding TotalAPagar, StringFormat='L{0:N2}'}" FontSize="16" />
+        </StackLayout>
+
+        <HorizontalStackLayout Spacing="12">
+            <Button Text="Calcular" Command="{Binding CalcularCommand}" />
+            <Button Text="Limpiar" Command="{Binding LimpiarCommand}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
